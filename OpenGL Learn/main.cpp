@@ -33,47 +33,91 @@ Camera camera(WIDTH, HEIGHT);
 
 int main() {
 	float cubeVertices[] = {
-	-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.25f, 0.36f,
-     0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.5f, 0.36f,
-     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.5f, 0.65f,
-     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.5f, 0.65f,
-    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.25f, 0.65f,
-    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.25f, 0.36f,
- 
-    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  1.0f, 0.36f,
-	 0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  0.75f, 0.36f,
-	 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  0.75f, 0.65f,
-	 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  0.75f, 0.65f,
-	-0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  1.0f, 0.65f,
-	-0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  1.0f, 0.36f,
- 
-    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.65f,
-	-0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.25f, 0.65f,
-	-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.25f, 0.36f,
-	-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.25f, 0.36f,
-	-0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.36f,
-	-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.65f,
- 
-     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.75f, 0.65f,
-	 0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.5f, 0.65f,
-	 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.5f, 0.36f,
-	 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.5f, 0.36f,
-	 0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.75f, 0.36f,
-	 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.75f, 0.65f,
- 
-    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.26f, 0.36f,
-	 0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.49f, 0.36f,
-	 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.49f, 0.0f,
-	 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.49f, 0.0f,
-	-0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.26f, 0.0f,
-	-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.26f, 0.36f,
- 
-    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.25f, 0.65f,
-	 0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.5f, 0.65f,
-	 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.5f, 1.0f,
-	 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.5f, 1.0f,
-	-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.25f, 1.0f,
-	-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.25f, 0.65f,
+	// Position            // Normal             // Tex Cord
+	-0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.25f, 0.36f,
+     0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.5f, 0.36f,
+     0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.5f, 0.65f,
+     0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.5f, 0.65f,
+    -0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.25f, 0.65f,
+    -0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   0.25f, 0.36f,
+ 						   						 
+    -0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f, 0.36f,
+	 0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   0.75f, 0.36f,
+	 0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   0.75f, 0.65f,
+	 0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   0.75f, 0.65f,
+	-0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f, 0.65f,
+	-0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f, 0.36f,
+ 						   						 
+    -0.5f,  0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   0.0f, 0.65f,
+	-0.5f,  0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   0.25f, 0.65f,
+	-0.5f, -0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   0.25f, 0.36f,
+	-0.5f, -0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   0.25f, 0.36f,
+	-0.5f, -0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   0.0f, 0.36f,
+	-0.5f,  0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   0.0f, 0.65f,
+ 						   						 
+     0.5f,  0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   0.75f, 0.65f,
+	 0.5f,  0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   0.5f, 0.65f,
+	 0.5f, -0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   0.5f, 0.36f,
+	 0.5f, -0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   0.5f, 0.36f,
+	 0.5f, -0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   0.75f, 0.36f,
+	 0.5f,  0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   0.75f, 0.65f,
+ 						   						 
+    -0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   0.26f, 0.36f,
+	 0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   0.49f, 0.36f,
+	 0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   0.49f, 0.0f,
+	 0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   0.49f, 0.0f,
+	-0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   0.26f, 0.0f,
+	-0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   0.26f, 0.36f,
+ 						   						 
+    -0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   0.25f, 0.65f,
+	 0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   0.5f, 0.65f,
+	 0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   0.5f, 1.0f,
+	 0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   0.5f, 1.0f,
+	-0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   0.25f, 1.0f,
+	-0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   0.25f, 0.65f,
+	};
+	float skyboxVertices[] = {
+	-1.0f,  1.0f, -1.0f,
+	-1.0f, -1.0f, -1.0f,
+	 1.0f, -1.0f, -1.0f,
+	 1.0f, -1.0f, -1.0f,
+	 1.0f,  1.0f, -1.0f,
+	-1.0f,  1.0f, -1.0f,
+
+	-1.0f, -1.0f,  1.0f,
+	-1.0f, -1.0f, -1.0f,
+	-1.0f,  1.0f, -1.0f,
+	-1.0f,  1.0f, -1.0f,
+	-1.0f,  1.0f,  1.0f,
+	-1.0f, -1.0f,  1.0f,
+
+	 1.0f, -1.0f, -1.0f,
+	 1.0f, -1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f, -1.0f,
+	 1.0f, -1.0f, -1.0f,
+
+	-1.0f, -1.0f,  1.0f,
+	-1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f, -1.0f,  1.0f,
+	-1.0f, -1.0f,  1.0f,
+
+	-1.0f,  1.0f, -1.0f,
+	 1.0f,  1.0f, -1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	-1.0f,  1.0f,  1.0f,
+	-1.0f,  1.0f, -1.0f,
+
+	-1.0f, -1.0f, -1.0f,
+	-1.0f, -1.0f,  1.0f,
+	 1.0f, -1.0f, -1.0f,
+	 1.0f, -1.0f, -1.0f,
+	-1.0f, -1.0f,  1.0f,
+	 1.0f, -1.0f,  1.0f
 	};
 	unsigned int cubeIndices[] = {
 		0, 1, 2,
@@ -100,8 +144,20 @@ int main() {
 
 	camera.setWindow(window);
 
-	Object CubeObj(cubeVertices, sizeof(cubeVertices), cubeIndices, sizeof(cubeIndices));
+	Object CubeObj(cubeVertices, sizeof(cubeVertices));
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
+
+	Object SkyBoxObj(skyboxVertices, sizeof(skyboxVertices));
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
 	Shader CubeShaderProgram("../Resources/Shaders/shader.vs", "../Resources/Shaders/shader.fs");
+	Shader SkyBoxShaderProgram("../Resources/Shaders/skybox.vs", "../Resources/Shaders/skybox.fs");
 	Shader LightShaderProgram("../Resources/Shaders/shader.vs", "../Resources/Shaders/light shader.fs");
 
 	CubeShaderProgram.use();
@@ -111,6 +167,40 @@ int main() {
 	LightShaderProgram.use();
 	LightShaderProgram.setVector4("objectColor", 1.0f, 1.0f, 1.0f, 1.0f);
 
+	// Cube map
+	unsigned int cubeMapID;
+	glGenTextures(1, &cubeMapID);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, cubeMapID);
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+	int width, height, nrChannels;
+	unsigned char* data;
+	std::vector<std::string> faces = { "right.jpg", "left.jpg", "top.jpg", "bottom.jpg", "front.jpg", "back.jpg"};
+	for (unsigned int i = 0; i < faces.size(); i++) 
+	{
+		data = stbi_load(("../Resources/Textures/skybox/" + faces[i]).c_str(), &width, &height, &nrChannels, 0);
+		if (data) 
+		{
+			glTexImage2D(
+				GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
+				0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
+			);
+		}
+		else
+		{
+			std::cout << "Failed to load [Cube Map Texture] ->" << faces[i] << std::endl;
+			stbi_image_free(data);
+		}
+	}
+
+
+
+
 	glEnable(GL_DEPTH_TEST);
 
 	while (!glfwWindowShouldClose(window)) {
@@ -119,7 +209,19 @@ int main() {
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		// Sky Box
+		glDepthMask(GL_FALSE);
+		SkyBoxShaderProgram.use();
+		SkyBoxShaderProgram.setMatrix4("projection", camera.projection);
+		SkyBoxShaderProgram.setMatrix4("view", glm::mat4(glm::mat3(camera.getView())));
+
+		SkyBoxObj.use();
+		glBindTexture(GL_TEXTURE_CUBE_MAP, cubeMapID);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glDepthMask(GL_TRUE);
+
 		// Cube
+		CubeObj.use();
 		CubeShaderProgram.use();
 
 		CubeShaderProgram.setVector3("lightPos", lightPos.x, lightPos.y, lightPos.z);

@@ -6,9 +6,9 @@
 
 class Object {
 public:
-	unsigned int VBO, VAO, EBO;
+	unsigned int VBO, VAO;
 
-	Object(float* vertices, unsigned int sizeofVertices, unsigned int* indices, unsigned int sizeofIndices);
+	Object(float* vertices, unsigned int sizeofVertices);
 
 	void changeVBO(float* vertices, unsigned int sizeofVertices);
 
